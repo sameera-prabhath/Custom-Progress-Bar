@@ -1,0 +1,132 @@
+<div class="req-no">
+    Request #: <span> 7654868512 </span>
+</div>
+<div class="date-status">
+    <div class="o-status">
+        <span> 1TS Status:</span> {{ovrlStaus}}
+    </div>
+    <div class="order-date">
+        Order Date:
+        <span>
+            April 28, 2021
+        </span>
+    </div>
+</div>
+<div class="w-100 step-container">
+    <div class="p-steps">
+        <div class="progress mainbars">
+            <div class="progress-bar bar-main bar-green w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar w-100 bar-green" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <div class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/checked.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Request ordered </div>
+                <div class="date">{{Date[0] | date:'mediumDate'}}</div>
+                <div class="time">{{Date[0] | date:'h:mm a '}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="p-steps">
+        <div class="progress mainbars">
+            <div class="progress-bar bar-main bar-green" role="progressbar" [style.width.%]="progLevel1"
+                aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar w-100" role="progressbar"
+                [ngClass]="{'bar-green': Green && barNo>=2 , 'bar-orange' : Orange && barNo===2}" aria-valuemin="0"
+                aria-valuemax="100">
+            </div>
+        </div>
+        <div *ngIf="barNo >2" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/checked.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Provisioning Access </div>
+                <div class="date">{{Date[1] | date:'mediumDate'}}</div>
+                <div class="time">{{Date[1] | date:'h:mm a '}}</div>
+            </div>
+        </div>
+        <div *ngIf="barNo===2" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/warning.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Status: </div>
+                <div class="date"> Waiting for Access</div>
+            </div>
+        </div>
+    </div>
+    <div class="p-steps">
+        <div class="progress mainbars">
+            <div class="progress-bar bar-main bar-green" role="progressbar" [style.width.%]="progLevel2"
+                aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar w-100" role="progressbar"
+                [ngClass]="{'bar-green': Green && barNo>=3 , 'bar-orange' : Orange && barNo===3}" aria-valuemin="0"
+                aria-valuemax="100">
+            </div>
+        </div>
+        <div *ngIf="barNo >3" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/checked.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Request ordered </div>
+                <div class="date">{{Date[2] | date:'mediumDate'}}</div>
+                <div class="time">{{Date[2] | date:'h:mm a '}}</div>
+            </div>
+        </div>
+        <div *ngIf="barNo===3" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/warning.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Status: </div>
+                <div class="date"> Waiting for Access</div>
+            </div>
+        </div>
+    </div>
+    <div class="p-steps">
+        <div class="progress mainbars">
+            <div class="progress-bar bar-main bar-green" role="progressbar" [style.width.%]="progLevel3"
+                aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar w-100" role="progressbar"
+                [ngClass]="{'bar-green': Green && barNo===4 , 'bar-orange' : Orange && barNo===4}" aria-valuemin="0"
+                aria-valuemax="100">
+            </div>
+        </div>
+        <div *ngIf="endBar" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/checked.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Granting access has been approved! </div>
+                <div class="date">{{Date[3] | date:'mediumDate'}}</div>
+                <div class="time">{{Date[3] | date:'h:mm a '}}</div>
+            </div>
+        </div>
+        <div *ngIf="barNo===4 && !endBar" class="bar-status">
+            <div class="bar-icon">
+                <img src="assets/warning.png" alt="">
+            </div>
+            <div class="bar-text">
+                <div class="title">Status: </div>
+                <div class="date"> Waiting for Access</div>
+            </div>
+        </div>
+    </div>
+</div>

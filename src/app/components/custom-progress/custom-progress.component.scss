@@ -1,0 +1,91 @@
+.step-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.step-container .p-steps {
+  width: 24%;
+}
+
+.bar-main {
+  transition: width 0.1s ease;
+}
+
+.mainbars {
+  height: 3px !important;
+  margin-bottom: 5px;
+}
+.progress-bar {
+  background-color: #e9ecef;
+  transition: all 0.3s ease;
+}
+.bar-green {
+  background-color: #4ed414;
+  transition: all 0.3s ease;
+}
+.bar-orange {
+  background-color: #eea312;
+  transition: all 0.3s ease;
+}
+.progress {
+  height: 18px;
+}
+
+.bar-status {
+  margin-top: 3px;
+  display: flex;
+  align-items: flex-start;
+}
+.bar-icon {
+  margin-right: 5px;
+}
+.bar-icon img {
+  width: 25px;
+  height: 25px;
+}
+.bar-text {
+  margin-top: 2px;
+}
+.bar-text div {
+  line-height: normal;
+}
+.bar-text .title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #383838;
+}
+.bar-text .date,
+.bar-text .time {
+  font-size: 12px;
+  font-weight: 500;
+  color: #383838;
+}
+
+.date-status {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.order-date,
+.req-no {
+  font-size: 18px;
+  font-weight: 500;
+  color: #383838;
+  line-height: normal;
+}
+.order-date span,
+.req-no span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #383838;
+}
+.o-status {
+  font-size: 12px;
+  font-weight: 500;
+  color: #383838;
+}
+.o-status span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #383838;
+}
